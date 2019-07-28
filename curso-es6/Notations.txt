@@ -1,0 +1,81 @@
+preset-env: entende o ambiente de trabalho (browse, node, mobile, etc) - projeto web
+arquivo de configuração babel: .babelrc
+
+ "scripts": {
+    "dev": "babel ./main.js -o ./bundle.js -w"
+  }
+O "-w" atualiza automaticamente o bundle quando é realizada alguma alteração
+
+variáveis "const" não deixa reatribuir o valor de uma variável.
+
+arrayqualquer.map(function(item){
+    percorre o array realizando determinada ação
+});
+
+arrayqualquer.reduce(function(item){
+    percorre o array realizando determinada ação e retorna um unico valor
+});
+
+arrayqualquer.filter(function(item){
+    percorre o array buscando algo retorna true ou false pra validacao
+    e o retorno do metodo é um array com os valores trues
+});
+
+---------------------------------------------------------------
+//REST utilizado para pegar o "resto" das propriedades - aplicável em vetores
+
+const usuario = {
+    nome: 'Joao',
+    idade: '22',
+    empresa: 'Teste'
+};
+
+const {nome, ...resto} = usuario;
+
+console.log(nome);
+console.log(resto);
+//----------------------------------------------//
+
+// SPREAD repassa as informacoes de um objeto para outra estrutura de dados
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 =[...arr1,...arr2];
+console.log(arr3);
+const usuarioNovo = {...usuario, nome: 'Joao Novo'};
+console.log(usuarioNovo);
+
+------------------------------------------------------------
+//template-literals
+console.log(`Meu nome é ${usuario.nome} e tenho ${usuario.idade} anos`);
+
+
+//Object Short Syntax - é possivel atribuir o atributo de um objeto sem fazer
+o atributo do objeto receber o atributo padrão
+exemplo:
+    const usuario = {
+        nome,
+        idade,
+        empresa: 'Nesse caso nao é um atributo padrão do objeto'
+    }
+
+------------
+contentBase: caminho que aponta para o servidor da aplicacao
+
+Quando quiser colocar o sistemna rede utilizar o comando "webpack --mode=production"
+Criar um comando build dentro de scripts 
+Exemplo:
+"scripts":{
+    "build": "webpack --mode=production"
+}
+
+promisses: requisições assincronas - async e await faz as mesmas coisas.
+Para instalar async e await quando utilizando o .babelrc
+utilize os seguintes comandos no cmd: 
+npm add @babel/plugin-transform-async-to-generator -D
+npm add @babel/polyfill -D
+
+Toda vez que tiver um await anteior a uma promise a PRÓXIMA função só vai ser executada
+depois que a primeira terminar de ser executada.
+
+Quando é colocado o "async" vira uma promise, o await só funciona para funções com async
+
