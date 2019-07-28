@@ -58,7 +58,13 @@ exemplo:
         empresa: 'Nesse caso nao é um atributo padrão do objeto'
     }
 
+------------
+contentBase: caminho que aponta para o servidor da aplicacao
 
-
-
+Quando quiser colocar o sistemna rede utilizar o comando "webpack --mode=production"
+Criar um comando build dentro de scripts 
+Exemplo:
+"scripts":{
+    "build": "webpack --mode=production"
+}
 
