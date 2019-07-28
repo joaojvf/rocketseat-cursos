@@ -1,0 +1,64 @@
+preset-env: entende o ambiente de trabalho (browse, node, mobile, etc) - projeto web
+arquivo de configuração babel: .babelrc
+
+ "scripts": {
+    "dev": "babel ./main.js -o ./bundle.js -w"
+  }
+O "-w" atualiza automaticamente o bundle quando é realizada alguma alteração
+
+variáveis "const" não deixa reatribuir o valor de uma variável.
+
+arrayqualquer.map(function(item){
+    percorre o array realizando determinada ação
+});
+
+arrayqualquer.reduce(function(item){
+    percorre o array realizando determinada ação e retorna um unico valor
+});
+
+arrayqualquer.filter(function(item){
+    percorre o array buscando algo retorna true ou false pra validacao
+    e o retorno do metodo é um array com os valores trues
+});
+
+---------------------------------------------------------------
+//REST utilizado para pegar o "resto" das propriedades - aplicável em vetores
+
+const usuario = {
+    nome: 'Joao',
+    idade: '22',
+    empresa: 'Teste'
+};
+
+const {nome, ...resto} = usuario;
+
+console.log(nome);
+console.log(resto);
+//----------------------------------------------//
+
+// SPREAD repassa as informacoes de um objeto para outra estrutura de dados
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 =[...arr1,...arr2];
+console.log(arr3);
+const usuarioNovo = {...usuario, nome: 'Joao Novo'};
+console.log(usuarioNovo);
+
+------------------------------------------------------------
+//template-literals
+console.log(`Meu nome é ${usuario.nome} e tenho ${usuario.idade} anos`);
+
+
+//Object Short Syntax - é possivel atribuir o atributo de um objeto sem fazer
+o atributo do objeto receber o atributo padrão
+exemplo:
+    const usuario = {
+        nome,
+        idade,
+        empresa: 'Nesse caso nao é um atributo padrão do objeto'
+    }
+
+
+
+
+
