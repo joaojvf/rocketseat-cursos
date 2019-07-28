@@ -68,3 +68,14 @@ Exemplo:
     "build": "webpack --mode=production"
 }
 
+promisses: requisições assincronas - async e await faz as mesmas coisas.
+Para instalar async e await quando utilizando o .babelrc
+utilize os seguintes comandos no cmd: 
+npm add @babel/plugin-transform-async-to-generator -D
+npm add @babel/polyfill -D
+
+Toda vez que tiver um await anteior a uma promise a PRÓXIMA função só vai ser executada
+depois que a primeira terminar de ser executada.
+
+Quando é colocado o "async" vira uma promise, o await só funciona para funções com async
+
